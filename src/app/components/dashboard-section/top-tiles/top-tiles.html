@@ -1,0 +1,66 @@
+<div class="dashboard-shell">
+    <div class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">API Marketplace System App</p>
+            <h1 class="Dash-title">API Dashboard</h1>
+            <p class="hero-text">
+                Track service usage, highlight the most popular APIs, and jump back into
+                the tools your team used most recently.
+            </p>
+        </div>
+
+        <div class="search-panel">
+            <label class="search-label" for="dashboard-search">Quick Search</label>
+            <div class="search-box">
+                <span class="search-icon">Search</span>
+                <input 
+  id="dashboard-search"
+  type="text"
+  placeholder="Search APIs, collections, or categories"
+  [(ngModel)]="searchText"
+  (input)="filterApis()"
+/>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stat-card" *ngFor="let card of apiCards" [class.primary]="card.tone === 'primary'"
+            [class.secondary]="card.tone === 'secondary'" [class.accent]="card.tone === 'accent'">
+            <p class="stat-label">{{ card.label }}</p>
+            <h2 class="value">{{ card.value }}</h2>
+            <p class="stat-note">{{ card.note }}</p>
+        </div>
+    </div>
+
+
+
+
+    <div class="api-table">
+  <h2>Available APIs</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Method</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let api of filteredList">
+        <td>{{ api.name }}</td>
+        <td>{{ api.category }}</td>
+        <td>{{ api.method }}</td>
+        <td>{{ api.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    
+</div>
+
+
+

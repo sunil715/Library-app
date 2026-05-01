@@ -1,0 +1,135 @@
+
+.stats-section {
+      display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stat-card {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.value  {
+  margin-bottom: 10px;
+    font-size: 25px;
+
+}
+
+.stat-note {
+  margin-bottom: 0;
+  line-height: 1.55;
+  color: #5b687b;
+}
+
+.stat-card.primary {
+  background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.stat-card.secondary {
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.stat-card.accent {
+  background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+}
+
+
+
+.dashboard-shell {
+  margin: 0 auto;
+}
+
+.hero,
+.panel,
+.stat-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.8);
+
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.8);
+}
+
+.eyebrow,
+.panel-kicker,
+.stat-label,
+.search-label {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0f766e;
+}
+
+
+.Dash-title {
+     font-size: 20px;
+    color: #333333;
+    font-weight: 600px;
+
+}
+
+.hero-text {
+    max-width: 620px;
+    color: #333333;
+}
+
+.search-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0f172a, #134e4a);
+  color: #f8fafc;
+}
+
+.search-label {
+  color: rgba(240, 253, 250, 0.82);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.search-icon {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+.search-box input::placeholder {
+  color: rgba(248, 250, 252, 0.72);
+}
+

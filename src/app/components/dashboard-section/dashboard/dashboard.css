@@ -1,0 +1,9 @@
+.dashboard-layout{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+    background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.14), transparent 30%),
+    linear-gradient(145deg, #f4f7f1 0%, #f7fbff 52%, #fff7ed 100%);
+}

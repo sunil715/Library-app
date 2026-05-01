@@ -1,0 +1,48 @@
+
+
+<div class="content-grid">
+    <div class="panel">
+        <div class="panel-head">
+            <div>
+                <p class="panel-kicker">Popular APIs</p>
+                <h3>Most used services</h3>
+            </div>
+            <span class="panel-badge">Top 4</span>
+        </div>
+
+        <div class="api-list">
+            <div class="api-row" *ngFor="let api of popularApis">
+                <div>
+                    <h4>{{ api.name }}</h4>
+                    <p>{{ api.category }}</p>
+                </div>
+
+                <div class="api-meta">
+                    <strong>{{ api.calls }}</strong>
+                    <span>{{ api.status }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-head">
+            <div>
+                <p class="panel-kicker">Recently Used APIs</p>
+                <h3>Latest activity</h3>
+            </div>
+            <span class="panel-badge muted">Live</span>
+        </div>
+
+        <div class="recent-list">
+            <div class="recent-item" *ngFor="let api of recentlyUsedApis">
+                <div class="recent-dot"></div>
+                <div class="recent-copy">
+                    <h4>{{ api.name }}</h4>
+                    <p>{{ api.action }}</p>
+                </div>
+                <span class="recent-time">{{ api.time }}</span>
+            </div>
+        </div>
+    </div>
+</div>
