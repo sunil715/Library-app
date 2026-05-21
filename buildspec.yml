@@ -5,25 +5,12 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-<<<<<<< HEAD
-=======
-      - npm install -g @angular/cli
->>>>>>> 64711bc8c9aca3c489256322e6894b7bceda2785
       - npm install
 
   build:
     commands:
-<<<<<<< HEAD
       - npm run build
 
 artifacts:
   files:
     - '**/*'
-=======
-      - ng build --configuration production
-
-artifacts:
-  base-directory: dist/
-  files:
-    - '**/*'
->>>>>>> 64711bc8c9aca3c489256322e6894b7bceda2785
