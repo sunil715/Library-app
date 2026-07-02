@@ -1,7 +1,7 @@
 .dashboard-layout{
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
     background:
     radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
     radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.14), transparent 30%),
