@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "library-App": {
+    "library-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "library-App:build:production"
+              "buildTarget": "library-app:build:production"
             },
             "development": {
-              "buildTarget": "library-App:build:development"
+              "buildTarget": "library-app:build:development"
             }
           },
           "defaultConfiguration": "development"
