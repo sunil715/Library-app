@@ -3,7 +3,6 @@ const path = require('path');
 
 const app = express();
 
-// ✅ MUST match actual dist folder
 const distFolder = path.join(__dirname, 'dist', 'Library-app', 'browser');
 
 app.use(express.static(distFolder));

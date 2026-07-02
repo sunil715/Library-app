@@ -1,5 +1,5 @@
 <div class="library-dashboard">
-  <section class="library-header">
+  <div class="library-header">
     <div class="library-title">
       <span class="library-badge">
         📚 Smart Library Management System
@@ -24,98 +24,67 @@
       </div>
 
     </div>
-  </section>
-  <section class="library-stats">
+  </div>
+  <div class="library-stats">
     <div
       class="library-card"
       *ngFor="let card of libraryCards"
     >
 
       <div class="card-icon">
-
         <span *ngIf="card.label==='Total Books'">📚</span>
-
         <span *ngIf="card.label==='Books Issued'">📖</span>
-
         <span *ngIf="card.label==='Available Books'">✅</span>
 
       </div>
 
-      <div>
-
-        <h2>{{card.value}}</h2>
-
-        <h4>{{card.label}}</h4>
-
-        <p>{{card.note}}</p>
-
+      <div class="books-details">
+          <h4 class="lable">{{card.label}}</h4>
+        <h2 class="value">{{card.value}}</h2>
+        <p class="note">{{card.note}}</p>
       </div>
-
     </div>
 
-  </section>
+  </div>
 
 
   <section class="book-list">
-
     <div class="section-header">
 
-      <h2>Available Books</h2>
-
+      <h1 class="ava-books">Available Books</h1>
       <button class="primary-btn">
         + Add Book
       </button>
 
     </div>
-
     <table class="book-table">
-
       <thead>
 
         <tr>
-
           <th>Book</th>
-
           <th>Author</th>
-
           <th>Category</th>
-
           <th>Publisher</th>
-
           <th>ISBN</th>
-
           <th>Copies</th>
-
           <th>Status</th>
-
         </tr>
-
       </thead>
 
       <tbody>
 
         <tr *ngFor="let book of filteredBooks">
-
           <td>
-
             <div class="book-info">
-
               <div class="book-cover">
                 📘
               </div>
-
               <span>{{book.title}}</span>
-
             </div>
-
           </td>
-
           <td>{{book.author}}</td>
-
           <td>{{book.category}}</td>
-
           <td>{{book.publisher}}</td>
-
           <td>{{book.isbn}}</td>
 
           <td>
