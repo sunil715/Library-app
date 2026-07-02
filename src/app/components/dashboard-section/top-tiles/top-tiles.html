@@ -1,116 +1,81 @@
 <div class="library-dashboard">
   <div class="library-header">
     <div class="library-title">
-      <span class="library-badge">
-        📚 Smart Library Management System
-      </span>
-      <h1>Library Dashboard</h1>
-      <p>
-        Manage books, members and borrowing activities from one centralized dashboard.
-      </p>
+      <span class="library-badge"><i class="fas fa-book-open"></i> Smart Library Management System</span>
+      <h1 class="library-heading"><i class="fas fa-chart-line"></i> Library Dashboard</h1>
+      <p class="library-description">Manage books, members and borrowing activities from one centralized dashboard.</p>
     </div>
 
     <div class="library-search">
-      <label>Search Library</label>
+      <label class="search-label">Search Library</label>
       <div class="search-box">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
         <input
+          class="search-input"
           type="text"
           placeholder="Search by title, author, category..."
           [(ngModel)]="searchText"
           (input)="filterBooks()"
         />
-
       </div>
-
     </div>
   </div>
+
   <div class="library-stats">
-    <div
-      class="library-card"
-      *ngFor="let card of libraryCards"
-    >
-
+    <div class="library-card" *ngFor="let card of libraryCards">
       <div class="card-icon">
-        <span *ngIf="card.label==='Total Books'">📚</span>
-        <span *ngIf="card.label==='Books Issued'">📖</span>
-        <span *ngIf="card.label==='Available Books'">✅</span>
-
+        <span *ngIf="card.label==='Total Books'"><i class="fas fa-book"></i></span>
+        <span *ngIf="card.label==='Books Issued'"><i class="fas fa-book-reader"></i></span>
+        <span *ngIf="card.label==='Available Books'"><i class="fas fa-circle-check"></i></span>
       </div>
 
       <div class="books-details">
-          <h4 class="lable">{{card.label}}</h4>
-        <h2 class="value">{{card.value}}</h2>
-        <p class="note">{{card.note}}</p>
+        <h4 class="card-title">{{card.label}}</h4>
+        <h2 class="card-value">{{card.value}}</h2>
+        <p class="card-note">{{card.note}}</p>
       </div>
     </div>
-
   </div>
-
 
   <section class="book-list">
     <div class="section-header">
-
-      <h1 class="ava-books">Available Books</h1>
-      <button class="primary-btn">
-        + Add Book
-      </button>
-
+      <h2 class="section-title">Available Books</h2>
+      <button class="primary-btn"><i class="fas fa-plus"></i> Add Book</button>
     </div>
+
     <table class="book-table">
       <thead>
-
         <tr>
-          <th>Book</th>
-          <th>Author</th>
-          <th>Category</th>
-          <th>Publisher</th>
-          <th>ISBN</th>
-          <th>Copies</th>
-          <th>Status</th>
+          <th class="table-heading">Book</th>
+          <th class="table-heading">Author</th>
+          <th class="table-heading">Category</th>
+          <th class="table-heading">Publisher</th>
+          <th class="table-heading">ISBN</th>
+          <th class="table-heading">Copies</th>
+          <th class="table-heading">Status</th>
         </tr>
       </thead>
 
       <tbody>
-
         <tr *ngFor="let book of filteredBooks">
           <td>
             <div class="book-info">
-              <div class="book-cover">
-                📘
-              </div>
-              <span>{{book.title}}</span>
+              <div class="book-cover"><i class="fas fa-file-lines"></i></div>
+              <span class="book-title">{{book.title}}</span>
             </div>
           </td>
-          <td>{{book.author}}</td>
-          <td>{{book.category}}</td>
-          <td>{{book.publisher}}</td>
-          <td>{{book.isbn}}</td>
-
+          <td class="table-data">{{book.author}}</td>
+          <td class="table-data">{{book.category}}</td>
+          <td class="table-data">{{book.publisher}}</td>
+          <td class="table-data">{{book.isbn}}</td>
+          <td class="table-data">{{book.availableCopies}} / {{book.totalCopies}}</td>
           <td>
-
-            {{book.availableCopies}} / {{book.totalCopies}}
-
-          </td>
-
-          <td>
-
-            <span
-              class="status"
-              [ngClass]="book.status ? 'available':'unavailable'">
-
+            <span class="status" [ngClass]="book.status ? 'available':'unavailable'">
               {{book.status ? 'Available':'Unavailable'}}
-
             </span>
-
           </td>
-
         </tr>
-
       </tbody>
-
     </table>
-
   </section>
-
 </div>
