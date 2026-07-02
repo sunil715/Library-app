@@ -3,11 +3,11 @@ const path = require('path');
 
 const app = express();
 
-const distFolder = path.join(__dirname, 'dist', 'library-App');
+// ✅ MUST match actual dist folder
+const distFolder = path.join(__dirname, 'dist', 'Library-app', 'browser');
 
 app.use(express.static(distFolder));
 
-// ✅ SAFE fallback for Angular SPA (NO path-to-regexp issue)
 app.use((req, res) => {
   res.sendFile(path.join(distFolder, 'index.html'));
 });
