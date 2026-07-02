@@ -1,11 +1,14 @@
-export interface APIModel{
-     id: number
-    name: string,
-    description: string
-    endpointUrl: string,
-    method: string,
-    status: boolean,
-    createdBy: string,
-    category: string
+export interface BookModel {
+  id: number;
+  title: string;
+  author: string;
+  category: string;
+  isbn: string;
+  publisher: string;
+  publishedYear: number;
+  totalCopies: number;
+  availableCopies: number;
+  language: string;
+  shelfLocation: string;
+  status: boolean;
 }
-

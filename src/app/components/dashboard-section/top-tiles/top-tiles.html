@@ -1,66 +1,147 @@
-<div class="dashboard-shell">
-    <div class="hero">
-        <div class="hero-copy">
-            <p class="eyebrow">API Marketplace System App</p>
-            <h1 class="Dash-title">API Dashboard</h1>
-            <p class="hero-text">
-                Track service usage, highlight the most popular APIs, and jump back into
-                the tools your team used most recently.
-            </p>
-        </div>
+<div class="library-dashboard">
+  <section class="library-header">
+    <div class="library-title">
+      <span class="library-badge">
+        📚 Smart Library Management System
+      </span>
+      <h1>Library Dashboard</h1>
+      <p>
+        Manage books, members and borrowing activities from one centralized dashboard.
+      </p>
+    </div>
 
-        <div class="search-panel">
-            <label class="search-label" for="dashboard-search">Quick Search</label>
-            <div class="search-box">
-                <span class="search-icon">Search</span>
-                <input 
-  id="dashboard-search"
-  type="text"
-  placeholder="Search APIs, collections, or categories"
-  [(ngModel)]="searchText"
-  (input)="filterApis()"
-/>
+    <div class="library-search">
+      <label>Search Library</label>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Search by title, author, category..."
+          [(ngModel)]="searchText"
+          (input)="filterBooks()"
+        />
+
+      </div>
+
+    </div>
+  </section>
+  <section class="library-stats">
+    <div
+      class="library-card"
+      *ngFor="let card of libraryCards"
+    >
+
+      <div class="card-icon">
+
+        <span *ngIf="card.label==='Total Books'">📚</span>
+
+        <span *ngIf="card.label==='Books Issued'">📖</span>
+
+        <span *ngIf="card.label==='Available Books'">✅</span>
+
+      </div>
+
+      <div>
+
+        <h2>{{card.value}}</h2>
+
+        <h4>{{card.label}}</h4>
+
+        <p>{{card.note}}</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="book-list">
+
+    <div class="section-header">
+
+      <h2>Available Books</h2>
+
+      <button class="primary-btn">
+        + Add Book
+      </button>
+
+    </div>
+
+    <table class="book-table">
+
+      <thead>
+
+        <tr>
+
+          <th>Book</th>
+
+          <th>Author</th>
+
+          <th>Category</th>
+
+          <th>Publisher</th>
+
+          <th>ISBN</th>
+
+          <th>Copies</th>
+
+          <th>Status</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let book of filteredBooks">
+
+          <td>
+
+            <div class="book-info">
+
+              <div class="book-cover">
+                📘
+              </div>
+
+              <span>{{book.title}}</span>
+
             </div>
-        </div>
-    </div>
 
-    <div class="stats-section">
-        <div class="stat-card" *ngFor="let card of apiCards" [class.primary]="card.tone === 'primary'"
-            [class.secondary]="card.tone === 'secondary'" [class.accent]="card.tone === 'accent'">
-            <p class="stat-label">{{ card.label }}</p>
-            <h2 class="value">{{ card.value }}</h2>
-            <p class="stat-note">{{ card.note }}</p>
-        </div>
-    </div>
+          </td>
 
+          <td>{{book.author}}</td>
 
+          <td>{{book.category}}</td>
 
+          <td>{{book.publisher}}</td>
 
-    <div class="api-table">
-  <h2>Available APIs</h2>
+          <td>{{book.isbn}}</td>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Method</th>
-        <th>Status</th>
-      </tr>
-    </thead>
+          <td>
 
-    <tbody>
-      <tr *ngFor="let api of filteredList">
-        <td>{{ api.name }}</td>
-        <td>{{ api.category }}</td>
-        <td>{{ api.method }}</td>
-        <td>{{ api.status }}</td>
-      </tr>
-    </tbody>
-  </table>
+            {{book.availableCopies}} / {{book.totalCopies}}
+
+          </td>
+
+          <td>
+
+            <span
+              class="status"
+              [ngClass]="book.status ? 'available':'unavailable'">
+
+              {{book.status ? 'Available':'Unavailable'}}
+
+            </span>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
 </div>
-    
-</div>
-
-
-
