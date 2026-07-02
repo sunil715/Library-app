@@ -3,11 +3,11 @@ const path = require('path');
 
 const app = express();
 
-const distFolder = path.join(__dirname, 'dist/Library-App/browser');
+const distFolder = path.join(__dirname, 'dist', 'library-App');
 
 app.use(express.static(distFolder));
 
-app.use((req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(distFolder, 'index.html'));
 });
 
