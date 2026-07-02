@@ -7,7 +7,8 @@ const distFolder = path.join(__dirname, 'dist', 'library-App');
 
 app.use(express.static(distFolder));
 
-app.get('/*', (req, res) => {
+// ✅ SAFE fallback for Angular SPA (NO path-to-regexp issue)
+app.use((req, res) => {
   res.sendFile(path.join(distFolder, 'index.html'));
 });
 
