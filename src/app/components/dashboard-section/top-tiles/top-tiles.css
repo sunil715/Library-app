@@ -25,13 +25,36 @@
     display:inline-flex;
     align-items:center;
     gap:8px;
-    background:#2563eb;
-    color:#fff;
     padding:8px 18px;
-    border-radius:30px;
-    font-size:13px;
+    font-size:16px;
     font-weight:600;
     width:fit-content;
+    
+}
+
+
+.library-badge {
+  --_space: ;
+
+  background-image: linear-gradient(
+    45deg var(--_space),
+    #f04bce ,
+    #af3c96 50%,
+    #722c62 100%,
+    #3a1b32 150%,
+    #000000 200%
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@supports (background-image: linear-gradient(in oklch, #000, #fff)) {
+  .library-badge {
+    --_space: in oklch;
+  }
 }
 
 .library-heading{
