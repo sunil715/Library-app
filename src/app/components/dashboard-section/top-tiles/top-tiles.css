@@ -84,62 +84,99 @@
 
 .library-stats{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-bottom:10px;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-bottom:15px;
 }
 
 .library-card{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:15px;
-    background:#fff;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    padding:20px;
+    color:#fff;
+    min-height:140px;
     transition:.3s;
+    cursor:pointer;
 }
 
 .library-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+}
+
+.books-card{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.issued-card{
+    background:linear-gradient(135deg,#f97316,#ea580c);
+}
+
+.available-card{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.member-card{
+    background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+}
+
+.overdue-card{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+.card-content{
+    position:relative;
+    z-index:2;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-label{
+    font-size:14px;
+    font-weight:600;
+    opacity:.9;
 }
 
 .card-icon{
-    width:50px;
-    height:50px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
     display:flex;
     justify-content:center;
     align-items:center;
-    border-radius:50%;
-    background:#2563eb;
-    color:#fff;
-    font-size:20px;
-}
-
-.books-details{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-}
-
-.card-title{
-    margin:0;
-    font-size:14px;
-    font-weight:600;
-    color:#374151;
+    font-size:22px;
 }
 
 .card-value{
-    margin:0;
-    font-size:24px;
+    margin:18px 0 10px;
+    font-size:36px;
     font-weight:700;
-    color:#111827;
+    color:#fff;
 }
 
 .card-note{
     margin:0;
     font-size:13px;
-    color:#6b7280;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    opacity:.95;
+}
+
+.library-card::after{
+    content:'';
+    position:absolute;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    right:-40px;
+    bottom:-40px;
 }
 
 .book-list{

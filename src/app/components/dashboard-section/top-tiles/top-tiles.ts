@@ -18,25 +18,42 @@ export class TopTiles implements OnInit {
   filteredBooks: BookModel[] = [];
 
   libraryCards = [
-    {
-      label: 'Total Books',
-      value: 2485,
-      note: 'Books available across all categories',
-      tone: 'primary',
-    },
-    {
-      label: 'Books Issued',
-      value: 486,
-      note: 'Currently borrowed by members',
-      tone: 'secondary',
-    },
-    {
-      label: 'Available Books',
-      value: 1999,
-      note: 'Ready for borrowing',
-      tone: 'accent',
-    },
-  ];
+  {
+    label: 'Total Books',
+    value: 2485,
+    note: '+12 this month',
+    icon: 'fa-book',
+    class: 'books-card'
+  },
+  {
+    label: 'Books Issued',
+    value: 486,
+    note: '+24 this week',
+    icon: 'fa-book-reader',
+    class: 'issued-card'
+  },
+  {
+    label: 'Available Books',
+    value: 1999,
+    note: 'Ready to borrow',
+    icon: 'fa-circle-check',
+    class: 'available-card'
+  },
+  {
+    label: 'Members',
+    value: 785,
+    note: '+18 new members',
+    icon: 'fa-users',
+    class: 'member-card'
+  },
+  {
+    label: 'Overdue Books',
+    value: 42,
+    note: 'Need attention',
+    icon: 'fa-clock',
+    class: 'overdue-card'
+  }
+];
 
   ngOnInit(): void {
     this.loadBooks();

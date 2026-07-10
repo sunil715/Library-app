@@ -1,13 +1,13 @@
 <div class="library-dashboard">
   <div class="library-header">
     <div class="library-title">
-      <span class="library-badge"><i class="fas fa-book-open"></i> Smart Library Management System</span>
-      <h1 class="library-heading"><i class="fas fa-chart-line"></i> Library Dashboard</h1>
+      <!-- <span class="library-badge"><i class="fas fa-book-open"></i> Smart Library Management System</span> -->
+      <h1 class="library-heading">Wellcome to Readify</h1>
       <p class="library-description">Manage books, members and borrowing activities from one centralized dashboard.</p>
     </div>
 
     <div class="library-search">
-      <label class="search-label">Search Library</label>
+      <label class="search-label">Search Knowledge Base</label>
       <div class="search-box">
         <span class="search-icon"><i class="fas fa-search"></i></span>
         <input
@@ -22,20 +22,27 @@
   </div>
 
   <div class="library-stats">
-    <div class="library-card" *ngFor="let card of libraryCards">
-      <div class="card-icon">
-        <span *ngIf="card.label==='Total Books'"><i class="fas fa-book"></i></span>
-        <span *ngIf="card.label==='Books Issued'"><i class="fas fa-book-reader"></i></span>
-        <span *ngIf="card.label==='Available Books'"><i class="fas fa-circle-check"></i></span>
+
+  <div class="library-card"
+       *ngFor="let card of libraryCards"
+       [ngClass]="card.class">
+
+    <div class="card-content">
+      <div class="card-top">
+        <span class="card-label">{{card.label}}</span>
+        <div class="card-icon">
+          <i class="fas" [ngClass]="card.icon"></i>
+        </div>
       </div>
 
-      <div class="books-details">
-        <h4 class="card-title">{{card.label}}</h4>
-        <h2 class="card-value">{{card.value}}</h2>
-        <p class="card-note">{{card.note}}</p>
-      </div>
+      <h2 class="card-value">{{card.value}}</h2>
+      <p class="card-note">
+        <i class="fas fa-arrow-trend-up"></i>{{card.note}}
+      </p>
     </div>
   </div>
+
+</div>
 
   <section class="book-list">
     <div class="section-header">
