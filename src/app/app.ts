@@ -12,5 +12,5 @@ import { Footer } from './components/shared/footer/footer';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Library-app');
+  protected readonly title = signal('Readify');
 }
