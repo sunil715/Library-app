@@ -24,7 +24,7 @@
 .library-badge{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     background:#2563eb;
     color:#fff;
     padding:8px 18px;
