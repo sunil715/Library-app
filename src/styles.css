@@ -3,3 +3,14 @@ html, body{
   height: 100%;
   margin: 0px;
 }
+.ag-theme-quartz .ag-row:nth-child(even) .ag-cell {
+  background-color: #f8fafc !important;
+}
+
+.ag-theme-quartz .ag-row:nth-child(odd) .ag-cell {
+  background-color: #ffffff !important;
+}
+
+.ag-theme-quartz .ag-row:hover .ag-cell {
+  background-color: #e0f2fe !important;
+}

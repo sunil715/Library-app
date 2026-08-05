@@ -2,87 +2,212 @@
   <div class="library-header">
     <div class="library-title">
       <!-- <span class="library-badge"><i class="fas fa-book-open"></i> Smart Library Management System</span> -->
-      <h1 class="library-heading">Wellcome to Readify</h1>
-      <p class="library-description">Manage books, members and borrowing activities from one centralized dashboard.</p>
+      <h1 class="library-heading">
+        Empower Your <span>Learning Journey</span>
+      </h1>
+      <p class="library-description">Access, organize, and monitor your digital resources effortlessly from one
+        intelligent workspace.
+      </p>
     </div>
 
     <div class="library-search">
-      <label class="search-label">Search Knowledge Base</label>
-      <div class="search-box">
-        <span class="search-icon"><i class="fas fa-search"></i></span>
-        <input
-          class="search-input"
-          type="text"
-          placeholder="Search by title, author, category..."
-          [(ngModel)]="searchText"
-          (input)="filterBooks()"
-        />
-      </div>
-    </div>
-  </div>
 
-  <div class="library-stats">
-
-  <div class="library-card"
-       *ngFor="let card of libraryCards"
-       [ngClass]="card.class">
-
-    <div class="card-content">
-      <div class="card-top">
-        <span class="card-label">{{card.label}}</span>
-        <div class="card-icon">
-          <i class="fas" [ngClass]="card.icon"></i>
+      <div class="search-header">
+        <i class="fas fa-search"></i>
+        <div>
+          <h4>Quick Search</h4>
+          <span>Find resources instantly</span>
         </div>
       </div>
 
-      <h2 class="card-value">{{card.value}}</h2>
-      <p class="card-note">
-        <i class="fas fa-arrow-trend-up"></i>{{card.note}}
-      </p>
+      <div class="search-box">
+        <i class="fas fa-magnifying-glass search-icon"></i>
+        <input class="search-input" type="text" placeholder="Search resources, owners, domains..."
+          [(ngModel)]="searchText" (input)="filterBooks()">
+
+        <button class="search-action"><i class="fas fa-arrow-right"></i></button>
+      </div>
     </div>
   </div>
 
-</div>
+  <div class="job-summary-container">
+    <div class="heading-section">
+      <h2 class="opp-summary-job">Library Overview</h2>
+      <p class="opp-summary-para">
+        Get a quick overview of your library's collection, issued books, available books, and overdue records.
+      </p>
+    </div>
+    <div class="cards-grid">
+      <div class="job-card blue-card">
+        <div class="glass-circle"></div>
+        <div class="card-top">
+          <div class="icon-box blue">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="card-value">
+            <h2>2,485</h2>
+          </div>
+          <div class="arrow-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h2 class="service">Collection</h2>
+          <p class="solution">View the total number of books available in the library collection.</p>
+        </div>
+        <div class="bottom-wave"></div>
+      </div>
+      <div class="job-card purple-card">
+        <div class="glass-circle"></div>
+        <div class="card-top">
+          <div class="icon-box purple">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="card-value">
+            <h2>485</h2>
+          </div>
+          <div class="arrow-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h2 class="service">Due Returns</h2>
+          <p class="solution">Track books that are overdue and require immediate return.</p>
+        </div>
+        <div class="bottom-wave"></div>
+      </div>
+      <div class="job-card green-card">
+        <div class="glass-circle"></div>
+        <div class="card-top">
+          <div class="icon-box green">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <div class="card-value">
+            <h2>134</h2>
+          </div>
+          <div class="arrow-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <h2 class="service">Checked Out</h2>
+          <p class="solution">Monitor all books currently issued to library members.</p>
+        </div>
+        <div class="bottom-wave"></div>
+      </div>
 
-  <section class="book-list">
-    <div class="section-header">
-      <h2 class="section-title">Available Books</h2>
-      <button class="primary-btn"><i class="fas fa-plus"></i> Add Book</button>
+      <div class="job-card cyan-card">
+        <div class="glass-circle"></div>
+
+        <div class="card-top">
+          <div class="icon-box cyan">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div class="card-value">
+            <h2>245</h2>
+          </div>
+          <div class="arrow-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <h2 class="service">Available</h2>
+          <p class="solution">
+            Browse books that are currently available for borrowing.
+          </p>
+        </div>
+
+        <div class="bottom-wave"></div>
+      </div>
     </div>
 
-    <table class="book-table">
-      <thead>
-        <tr>
-          <th class="table-heading">Book</th>
-          <th class="table-heading">Author</th>
-          <th class="table-heading">Category</th>
-          <th class="table-heading">Publisher</th>
-          <th class="table-heading">ISBN</th>
-          <th class="table-heading">Copies</th>
-          <th class="table-heading">Status</th>
-        </tr>
-      </thead>
+  </div>
 
-      <tbody>
-        <tr *ngFor="let book of filteredBooks">
-          <td>
-            <div class="book-info">
-              <div class="book-cover"><i class="fas fa-file-lines"></i></div>
-              <span class="book-title">{{book.title}}</span>
-            </div>
-          </td>
-          <td class="table-data">{{book.author}}</td>
-          <td class="table-data">{{book.category}}</td>
-          <td class="table-data">{{book.publisher}}</td>
-          <td class="table-data">{{book.isbn}}</td>
-          <td class="table-data">{{book.availableCopies}} / {{book.totalCopies}}</td>
-          <td>
-            <span class="status" [ngClass]="book.status ? 'available':'unavailable'">
-              {{book.status ? 'Available':'Unavailable'}}
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <div class="book-list">
+    <div class="section-header">
+      <div>
+        <div class="section-title">
+          <i class="fas fa-database"></i>
+          <h2 class="Inv">Library Inventory</h2>
+        </div>
+
+        <p class="section-subtitle">
+          View the complete inventory with availability and status information.
+        </p>
+      </div>
+
+      <button class="primary-btn" (click)="openAddResource()">
+        <i class="fas fa-plus"></i>
+        Add Resource
+      </button>
+    </div>
+
+    <ag-grid-angular class="ag-theme-quartz" style="width:100%;height:350px" [rowData]="filteredBooks"
+      [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [pagination]="true" columnMenu="legacy"
+      [paginationPageSize]="10">
+    </ag-grid-angular>
+  </div>
+
+  <div class="popup-overlay" *ngIf="showAddPopup">
+
+    <div class="popup-card">
+
+        <div class="popup-header">
+            <h2>Add New Resource</h2>
+
+            <button class="close-btn" (click)="closePopup()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="popup-body">
+
+            <input type="text"
+                   placeholder="Resource Name"
+                   [(ngModel)]="newBook.title">
+
+            <input type="text"
+                   placeholder="Author"
+                   [(ngModel)]="newBook.author">
+
+            <input type="text"
+                   placeholder="Category"
+                   [(ngModel)]="newBook.category">
+
+            <input type="text"
+                   placeholder="Publisher"
+                   [(ngModel)]="newBook.publisher">
+
+            <input type="text"
+                   placeholder="Reference ID"
+                   [(ngModel)]="newBook.isbn">
+
+            <input type="number"
+                   placeholder="Total Copies"
+                   [(ngModel)]="newBook.totalCopies">
+
+            <input type="number"
+                   placeholder="Available Copies"
+                   [(ngModel)]="newBook.availableCopies">
+
+        </div>
+
+        <div class="popup-footer">
+
+            <button class="cancel-btn"
+                    (click)="closePopup()">
+                Cancel
+            </button>
+
+            <button class="save-btn"
+                    (click)="saveBook()">
+                Save Resource
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 </div>
